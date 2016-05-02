@@ -120,7 +120,8 @@ class TimestampDecoder : public RemoteControllable
             latestFCT = 0;
             enableDecode = false;
             full_timestamp_received_mnsc = false;
-            gmtime_r(0, &temp_time);
+            time_t zero = 0;
+            gmtime_r(&zero, &temp_time);
             offset_changed = false;
 
             RC_ADD_PARAMETER(offset, "TIST offset [s]");
