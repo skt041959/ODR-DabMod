@@ -25,10 +25,11 @@
    along with ODR-DabMod.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "DabModulator.h"
+
 #include <string>
 #include <memory>
 
-#include "DabModulator.h"
 #include "PcDebug.h"
 
 #include "FrameMultiplexer.h"

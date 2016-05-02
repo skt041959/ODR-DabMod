@@ -22,6 +22,8 @@
    You should have received a copy of the GNU General Public License
    along with ODR-DabMod.  If not, see <http://www.gnu.org/licenses/>.
  */
+#include "RemoteControl.h"
+
 #include <list>
 #include <string>
 #include <iostream>
@@ -29,7 +31,6 @@
 #include <boost/asio.hpp>
 #include <boost/thread.hpp>
 
-#include "RemoteControl.h"
 
 using boost::asio::ip::tcp;
 using namespace std;
@@ -94,7 +95,7 @@ void RemoteControllerTelnet::process(long)
                 boost::asio::streambuf buffer;
                 length = boost::asio::read_until( socket, buffer, "\n", ignored_error);
 
-                std::istream str(&buffer); 
+                std::istream str(&buffer);
                 std::getline(str, in_message);
 
                 if (length == 0) {
@@ -102,7 +103,7 @@ void RemoteControllerTelnet::process(long)
                     break;
                 }
 
-                while (in_message.length() > 0 && 
+                while (in_message.length() > 0 &&
                         (in_message[in_message.length()-1] == '\r' ||
                          in_message[in_message.length()-1] == '\n')) {
                     in_message.erase(in_message.length()-1, 1);

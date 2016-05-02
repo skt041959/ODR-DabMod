@@ -27,6 +27,8 @@
 #ifndef TIMESTAMP_DECODER_H
 #define TIMESTAMP_DECODER_H
 
+#include "config.h"
+
 #include <queue>
 #include <memory>
 #include <string>
