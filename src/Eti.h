@@ -49,7 +49,7 @@ typedef DWORD32 uint32_t;
 
 struct eti_SYNC {
     uint32_t ERR:8;
-    uint32_t FSYNC:24;
+    uint32_t FSYNC_:24;
 } PACKED;
 
 
@@ -106,7 +106,7 @@ struct eti_MNSC_TIME_1 {
     uint32_t second_unit:4;
     uint32_t second_tens:3;
     uint32_t accuracy:1;
-    
+
     uint32_t minute_unit:4;
     uint32_t minute_tens:3;
     uint32_t sync_to_frame:1;
@@ -115,7 +115,7 @@ struct eti_MNSC_TIME_1 {
 struct eti_MNSC_TIME_2 {
     uint32_t hour_unit:4;
     uint32_t hour_tens:4;
-    
+
     uint32_t day_unit:4;
     uint32_t day_tens:4;
 } PACKED;
@@ -123,7 +123,7 @@ struct eti_MNSC_TIME_2 {
 struct eti_MNSC_TIME_3 {
     uint32_t month_unit:4;
     uint32_t month_tens:4;
-    
+
     uint32_t year_unit:4;
     uint32_t year_tens:4;
 } PACKED;

@@ -137,7 +137,7 @@ int EtiReader::process(const Buffer* dataIn)
             in += 4;
             state = EtiReaderStateFc;
             PDEBUG("Sync.err: 0x%.2x\n", eti_sync.ERR);
-            PDEBUG("Sync.fsync: 0x%.6x\n", eti_sync.FSYNC);
+            PDEBUG("Sync.fsync: 0x%.6x\n", eti_sync.FSYNC_);
             break;
         case EtiReaderStateFc:
             if (input_size < 4) {
