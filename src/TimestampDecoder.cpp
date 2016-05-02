@@ -112,12 +112,14 @@ void TimestampDecoder::pushMNSCData(int framephase, uint16_t mnsc)
     switch (framephase)
     {
         case 0:
-            mnsc0 = (struct eti_MNSC_TIME_0*)&mnsc;
-            enableDecode = (mnsc0->type == 0) &&
-                (mnsc0->identifier == 0);
-            time_t zero = 0;
-            gmtime_r(&zero, &temp_time);
-            break;
+            {
+                mnsc0 = (struct eti_MNSC_TIME_0*)&mnsc;
+                enableDecode = (mnsc0->type == 0) &&
+                    (mnsc0->identifier == 0);
+                time_t zero = 0;
+                gmtime_r(&zero, &temp_time);
+                break;
+            }
 
         case 1:
             mnsc1 = (struct eti_MNSC_TIME_1*)&mnsc;
