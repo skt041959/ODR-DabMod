@@ -43,6 +43,25 @@ INSTALL
 =======
 See the INSTALL file for installation instructions.
 
+Compile Under Cygwin
+=======
+- Check out the `cygwin` branch  
+- Install the ZeroMQ dependency with `libzmq5`  
+- Run Install Procedure in the `INSTALL`  
+    * Clone the git repository  
+    * Bootstrap autotools:  
+        ```
+        ./bootstrap.sh  
+        ```  
+            In case this fails, try:  
+        ```
+        aclocal && automake --gnu --add-missing && autoconf
+        ```  
+    * execute the `./configure` as following:  
+        ```
+        CXXFLAGS=-D_GNU_SOURCE CFLAGS=-D_GNU_SOURCE ./configure --disable-output-uhd  
+        ```
+
 LICENCE
 =======
 See the files LICENCE and COPYING
